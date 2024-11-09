@@ -1,0 +1,148 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: medium;
+    font-weight: bold;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.container{
+    width: 100%;
+
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    .logo{  
+        padding: 10px 0 0 16vw;
+        height: 80px;
+    }
+    
+    .button{
+        /* width: 40vw; */
+        position: absolute;
+        right: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        button{
+            background-color: transparent;
+            border: none;
+            margin: 30px;
+        }
+    }
+    background-color: transparent;
+    
+}
+.header3{
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    width: 100%;
+    .display{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .logo{  
+        padding: 10px 0 0 0vw;
+        height: 80px;
+    }
+    background-color: white;
+    .newbutton{
+        display: none;
+        flex-direction: column;
+        align-items: start;
+        width: 100%;
+        button{
+            margin: 10px;
+            border: none;
+            background-color: transparent;
+            color:cadetblue;
+        }
+        transition: transform 1s ease;
+        background-color: white; 
+    } 
+    .option{
+        border: none;
+        background-color: transparent;
+    }
+    .new_height{
+        display: flex;
+    }
+}
+.header2{
+    position: fixed; left: 0;
+    background-color: white;
+    color: black;
+
+}
+.home{
+    position:absolute;
+    z-index: -2;    
+    top: 0;     left: 0;
+    height: 100vh;
+    width: 100%;    
+    background-image: url("hero-bcg.jpeg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    color:bisque;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .content{
+        width: 50%;
+    }
+    h1{
+        font-size: xx-large;
+        color: aliceblue;
+    }
+                
+}
+.aboutus{
+    position:absolute;
+    z-index: -2;    
+    top: 100vh;     left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: wheat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.domain{
+    position:absolute;
+    z-index: -2;    top: 200vh;     left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.why{   
+    position:absolute;
+    z-index: -2;    top: 300vh;     left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width:800px){
+    .header{
+        display: none;
+    }
+    .header3{
+        display: flex;
+    }
+}

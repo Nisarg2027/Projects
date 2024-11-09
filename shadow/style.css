@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh;
+    width: 100vw;
+    font-size: 50px;
+    font-family: cursive;
+    background-color:cadetblue;
+    /* border: 2px solid black; */
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.one{
+    position: absolute;
+    /* z-index: 0;
+    top: 40vh;
+    left: 40vw;
+    text-shadow:  rgba(100, 43, 43, 1) 400px 10px 0px;  */
+}
+.two{
+    position: absolute;
+    /* z-index: 1;
+    top: 40vh;
+    left: 40vw;
+    text-shadow: -400px -10px 0px rgb(71, 43, 100);  */
+
+}
+.three{
+    position: absolute;
+    /* z-index: 2;
+    top: 40vh;
+    left: 40vw; 
+    text-shadow: 10px 200px 0px rgb(87, 100, 43);  */
+}
+.four{
+    position: absolute;
+    /* z-index: 3;
+    top: 40vh;
+    left: 40vw;
+    text-shadow: -10px -200px 0px rgb(174, 172, 44);  */
+}

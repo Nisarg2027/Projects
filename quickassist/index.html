@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Assist - Receiver Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 10px;
+            max-width: 100vw;
+            margin: 0;
+        }
+
+        header {
+            background: #007bff;
+            color: white;
+            padding: 10px 15px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #requests, #details {
+            background: white;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 10px;
+        }
+
+        th, td {
+            padding: 8px 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            width: 100%;
+            max-width: 200px;
+            margin: 5px 0;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #request-details p {
+            margin: 8px 0;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        @media (max-width: 500px) {
+            body {
+                padding: 5px;
+            }
+
+            header, #requests, #details {
+                padding: 10px;
+                margin-top: 10px;
+            }
+
+            th, td {
+                padding: 6px 8px;
+                font-size: 0.9em;
+            }
+
+            button {
+                padding: 6px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Quick Assist - Emergency Response Dashboard</h1>
+    </header>
+
+    <section id="requests">
+        <h2>Incoming Emergency Requests</h2>
+        <table id="requests-table">
+            <thead>
+                <tr>
+                    <th>Request ID</th>
+                    <th>Description</th>
+                    <th>Location</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dynamic rows will be added here via JavaScript -->
+            </tbody>
+        </table>
+    </section>
+
+    <section id="details">
+        <h2>Request Details</h2>
+        <div id="request-details">
+            <p><strong>ID:</strong> <span id="request-id"></span></p>
+            <p><strong>Description:</strong> <span id="request-description"></span></p>
+            <p><strong>Location:</strong> <span id="request-location"></span></p>
+            <p><strong>Status:</strong> <span id="request-status"></span></p>
+            <button id="update-status">Mark as In Progress</button>
+            <button id="complete-request">Mark as Resolved</button>
+        </div>
+    </section>
+
+    <script>
+        // Simulated data for demo purposes
+        let requestIdCounter = 3;
+        const requests = [
+            {
+                id: 1,
+                description: 'Fire at MG Road, Bengaluru',
+                location: 'MG Road, Bengaluru, Karnataka',
+                status: 'Pending'
+            },
+            {
+                id: 2,
+                description: 'Medical emergency near Charminar',
+                location: 'Charminar, Hyderabad, Telangana',
+                status: 'Pending'
+            }
+        ];
+
+        // Function to render requests in the table
+        function renderRequests() {
+            const tableBody = document.querySelector('#requests-table tbody');
+            tableBody.innerHTML = ''; // Clear existing rows
+
+            requests.forEach((request) => {
+                const row = document.createElement('tr');   
+                row.innerHTML = `
+                    <td>${request.id}</td>
+                    <td>${request.description}</td>
+                    <td>${request.location}</td>
+                    <td>${request.status}</td>
+                    <td><button onclick="viewDetails(${request.id})">View</button></td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Function to view details of a specific request
+        function viewDetails(id) {
+            const request = requests.find(r => r.id === id);
+            if (request) {
+                document.getElementById('request-id').textContent = request.id;
+                document.getElementById('request-description').textContent = request.description;
+                document.getElementById('request-location').textContent = request.location;
+                document.getElementById('request-status').textContent = request.status;
+            }
+        }
+
+        // Function to update request status
+        function updateRequestStatus(newStatus) {
+            const id = document.getElementById('request-id').textContent;
+            const request = requests.find(r => r.id == id);
+            if (request) {
+                request.status = newStatus;
+                renderRequests();
+                viewDetails(request.id);
+                alert(`Request #${id} marked as ${newStatus}`);
+            }
+        }
+
+        document.getElementById('update-status').addEventListener('click', () => {
+            updateRequestStatus('In Progress');
+        });
+
+        document.getElementById('complete-request').addEventListener('click', () => {
+            updateRequestStatus('Resolved');
+        });
+
+        // Function to simulate new incoming requests
+        function addNewRequest() {
+            const newRequests = [
+                {
+                    description: 'Road accident near Marine Drive',
+                    location: 'Marine Drive, Mumbai, Maharashtra'
+                },
+                {
+                    description: 'Building collapse reported',
+                    location: 'Connaught Place, New Delhi'
+                },
+                {
+                    description: 'Flood situation in Ganga Ghat',
+                    location: 'Ganga Ghat, Varanasi, Uttar Pradesh'
+                }
+            ];
+
+            const randomRequest = newRequests[Math.floor(Math.random() * newRequests.length)];
+            requests.push({
+                id: requestIdCounter++,
+                description: randomRequest.description,
+                location: randomRequest.location,
+                status: 'Pending'
+            });
+            renderRequests();
+        }
+
+        // Simulate new requests coming in every 10 seconds
+        setInterval(addNewRequest, 10000);
+
+        // Initialize the page with existing requests
+        renderRequests();
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Assist App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Quick Assist</h1>
+        <p>Your safety, our priority!</p>
+    </header>
+    
+    <section id="report">
+        <h2>Emergency Assistance</h2>
+        <form>
+            <label for="issue">Describe Your Issue:</label>
+            <textarea id="issue" name="issue" placeholder="Describe your emergency..." required></textarea>
+            
+            <label for="location">Your Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter location" required>
+
+            <button type="submit" id="assist-btn">Request Assistance</button>
+        </form> 
+    </section>
+    
+    <div class="alert">
+        <div class="alert-message">
+            <p>Assistance is on the way.</p>
+            <button class="ok">OK</button>
+        </div>
+    </div>
+
+    <section id="quick-action">
+        <h2>Quick Actions</h2>
+        <button class="emergencybutton">Emergency</button>
+        <button class="action-btn" data-action="police">Call Police</button>
+        <button class="action-btn" data-action="ambulance">Call Ambulance</button>
+        <button class="action-btn" data-action="message">Emergency Call & Message</button>
+        <button class="action-btn" data-action="location">Share Location</button>
+    </section>
+
+    <audio src="siren.mp3"></audio>
+    <!-- <audio src="siren-a-248662.mp3"></audio>     -->
+
+    <footer>
+        <p>&copy; 2024 Quick Assist. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

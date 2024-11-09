@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+body{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+h1{
+    color:white ;
+    font-size: xx-large;
+    margin: 0 0 100px 0;
+}
+.imgcont{    
+    background-color: orange;
+    padding: 80px;
+    height: 60vh;
+    width: 45vw;
+    img{
+        height: 100%;
+        width: 100%;
+    }
+    display: flex;
+}
+.spacing , .blur{
+    width: 80vw;
+}

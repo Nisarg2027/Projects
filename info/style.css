@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+    
+}
+
+body{
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: aliceblue;
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: xx-large;
+    .underline{
+        margin: 10px;
+        height: 0.4vh;
+        width: 15vw;
+        background-color: aquamarine;
+        border-radius: 2px;
+    }
+
+}
+.title:hover{
+    transform: scale(1.2);
+}
+.content{
+    height: 40vh;   width: 60vw;    box-shadow: 0 2px 5px rgba(0,0,0,0.3);    ;
+    display: flex;      flex-direction: column;     align-items: center;    justify-content: center;
+    background-color: white;
+    .info{
+
+        display: flex;      flex-direction: column;     align-items: center;    justify-content: center;    
+        .image{
+            height: 100px;
+            width: 100px;
+            background-color: black;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 5px;
+            margin: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: transform 1s ease-in-out;
+        }  
+        .name:hover{
+            transform: scale(1.1);
+        }
+        .ocupation{
+            font-size: medium;
+            color:darkturquoise;
+        }
+        .ocupation:hover{
+            transform: scale(1.1);
+        }
+        .image:hover{
+            transform: scale(5.1);
+        } 
+        .detail{
+            text-align: center;
+        }
+        .detail:hover{
+            transform: scale(1.05);
+        }
+    }
+
+    .others{
+        display: flex;     align-items: center;    justify-content: center;    
+        .next,.prev{
+            width: 25px;
+            height: 25px;
+            margin: 5px;
+            border: none;
+            background-color: white;
+        }
+        .next:hover,.prev:hover{
+            border: 2px solid black;
+            border-radius: 4px;
+            transform: scale(1.2);
+            background-color: beige;
+        }
+    }
+    .surprise{
+        border-radius: 5px;
+        border: none;
+        height: 3vh;
+        width: 10vw;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.3);    ;
+    }
+    .surprise:hover{
+        background-color:cadetblue;
+        color: aliceblue;
+        transform: scale(1.1);
+    }
+    border-radius: 10px;
+} 
+
+ 

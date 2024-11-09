@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>digital-clock</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="inputdate">
+            <label for="name">Date of event:</label>
+            <br>
+            <input type="date" class="date">
+            <br>
+        </div>
+        <div class="inputtime">
+            <label for="time">Time of event:</label>
+            <br>
+            <div class="fulltime">
+                <input type="time"  class="time" >
+                <input type="number" min="0" max="60" class="sec" placeholder="sec">
+            </div>
+
+        </div>
+        <div class="submitbutton">
+    
+            <button class="submit">Submit</button>
+        </div>
+        
+        Time escaped:
+        <div class="timeescaped">
+
+        </div>
+    </div>
+
+</body>
+<script src="tweleth.js">
+
+</script>
+</html> 
